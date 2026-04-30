@@ -15,6 +15,9 @@ const navLinks = [
   { href: "#contact", label: "Contact" },
 ]
 
+const GITHUB_URL = "https://github.com/ArchitVishnoi2003"
+const LINKEDIN_URL = "https://www.linkedin.com/in/archit-vishnoi-276240279"
+
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -27,10 +30,21 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault()
+    const id = href.replace("#", "")
+    const target = document.getElementById(id)
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" })
+      if (history.replaceState) history.replaceState(null, "", href)
+    }
+    setIsMobileMenuOpen(false)
+  }
+
   return (
     <header
       className={cn(
-        "fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-500",
+        "fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 max-w-[calc(100vw-2rem)]",
         isScrolled ? "glass-strong rounded-full px-6 py-3 shadow-lg" : "bg-transparent px-6 py-4",
       )}
     >
@@ -42,24 +56,25 @@ export function Header() {
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
-            <Link
+            <a
               key={link.href}
               href={link.href}
-              className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              onClick={(e) => scrollToSection(e, link.href)}
+              className="text-sm text-muted-foreground hover:text-primary transition-colors cursor-pointer"
             >
               {link.label}
-            </Link>
+            </a>
           ))}
         </div>
 
         <div className="hidden md:flex items-center gap-3">
-          <Link href="https://github.com/avarchit123" target="_blank" rel="noopener noreferrer">
+          <Link href={GITHUB_URL} target="_blank" rel="noopener noreferrer">
             <Button variant="ghost" size="icon" className="h-8 w-8 text-muted-foreground hover:text-primary">
               <Github className="h-4 w-4" />
               <span className="sr-only">GitHub</span>
             </Button>
           </Link>
-          <Link href="https://linkedin.com/in/avarchit123" target="_blank" rel="noopener noreferrer">
+          <Link href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">
             <Button variant="ghost" size="icon" className="h-8 w-8 text-muted-foreground hover:text-primary">
               <Linkedin className="h-4 w-4" />
               <span className="sr-only">LinkedIn</span>
@@ -78,27 +93,27 @@ export function Header() {
         </Button>
       </nav>
 
-      {/* Mobile Menu - also removed Resume button */}
+      {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="absolute top-full left-0 right-0 mt-2 glass-strong rounded-2xl p-4 md:hidden animate-slide-up">
           <div className="flex flex-col gap-3">
             {navLinks.map((link) => (
-              <Link
+              <a
                 key={link.href}
                 href={link.href}
-                className="text-sm text-muted-foreground hover:text-primary transition-colors py-2"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={(e) => scrollToSection(e, link.href)}
+                className="text-sm text-muted-foreground hover:text-primary transition-colors py-2 cursor-pointer"
               >
                 {link.label}
-              </Link>
+              </a>
             ))}
             <div className="flex items-center gap-3 pt-3 border-t border-border">
-              <Link href="https://github.com/avarchit123" target="_blank" rel="noopener noreferrer">
+              <Link href={GITHUB_URL} target="_blank" rel="noopener noreferrer">
                 <Button variant="ghost" size="icon" className="h-8 w-8 text-muted-foreground hover:text-primary">
                   <Github className="h-4 w-4" />
                 </Button>
               </Link>
-              <Link href="https://linkedin.com/in/avarchit123" target="_blank" rel="noopener noreferrer">
+              <Link href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">
                 <Button variant="ghost" size="icon" className="h-8 w-8 text-muted-foreground hover:text-primary">
                   <Linkedin className="h-4 w-4" />
                 </Button>

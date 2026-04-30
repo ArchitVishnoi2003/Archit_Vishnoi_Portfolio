@@ -21,13 +21,13 @@ const codeLines: CodeLine[] = [
   { minWidth: 28, maxWidth: 68, color: "cyan", fillSpeed: 1.0, moveSpeed: 1.0, indent: 0, opacity: 0.95, layer: "foreground" },
   { minWidth: 25, maxWidth: 65, color: "teal", fillSpeed: 1.0, moveSpeed: 1.0, indent: 0, opacity: 0.95, layer: "foreground" },
   { minWidth: 30, maxWidth: 70, color: "cyan", fillSpeed: 1.0, moveSpeed: 1.0, indent: 0, opacity: 0.95, layer: "foreground" },
-  
+
   // Midground layer (medium speed)
   { minWidth: 22, maxWidth: 58, color: "purple", fillSpeed: 0.75, moveSpeed: 0.8, indent: 1, opacity: 0.85, layer: "midground" },
   { minWidth: 24, maxWidth: 62, color: "blue", fillSpeed: 0.75, moveSpeed: 0.8, indent: 1, opacity: 0.85, layer: "midground" },
   { minWidth: 26, maxWidth: 64, color: "teal", fillSpeed: 0.75, moveSpeed: 0.8, indent: 1, opacity: 0.85, layer: "midground" },
   { minWidth: 23, maxWidth: 60, color: "purple", fillSpeed: 0.75, moveSpeed: 0.8, indent: 1, opacity: 0.85, layer: "midground" },
-  
+
   // Background layer (slowest, subtle)
   { minWidth: 20, maxWidth: 55, color: "blue", fillSpeed: 0.5, moveSpeed: 0.6, indent: 2, opacity: 0.75, layer: "background" },
   { minWidth: 21, maxWidth: 52, color: "green", fillSpeed: 0.5, moveSpeed: 0.6, indent: 2, opacity: 0.75, layer: "background" },
@@ -134,7 +134,7 @@ function AnimatedCodeLine({
   // FILL/UNFILL BEHAVIOR:
   // Scroll UP (progress increases) → Fill (width increases, move forward)
   // Scroll DOWN (progress decreases) → Unfill (width decreases, move backward)
-  
+
   // Width: interpolate from minWidth to maxWidth with eased curve
   const lineWidth = useTransform(easedProgress, (p) => {
     if (prefersReducedMotion) return line.minWidth
@@ -158,7 +158,7 @@ function AnimatedCodeLine({
 
   const glowIntensity = useTransform(
     [baseGlowIntensity, hoverIntensity],
-    ([base, hover]) => Math.min(1, base + hover)
+    ([base, hover]: number[]) => Math.min(1, base + hover)
   )
 
   return (
@@ -252,24 +252,52 @@ export function AnimatedCodeEditor({ scrollProgress: externalScrollProgress }: A
     prefersReducedMotion ? [0.2, 0.2, 0.2] : [0.2, 0.4, 0.6]
   )
 
-  // On mobile, show static version
-  if (isMobile) {
-    return (
-      <div
-        ref={containerRef}
-        className="relative w-full h-[300px] rounded-2xl overflow-hidden"
-        style={{
-          background: "rgba(255, 255, 255, 0.03)",
-          backdropFilter: "blur(12px)",
-          border: "1px solid rgba(255, 255, 255, 0.1)",
-        }}
-      >
-        <div className="absolute top-0 left-0 right-0 h-10 bg-black/20 backdrop-blur-sm border-b border-white/10 flex items-center gap-2 px-4 z-10">
-          <div className="w-3 h-3 rounded-full bg-[#ff5f56]" />
-          <div className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
-          <div className="w-3 h-3 rounded-full bg-[#27ca40]" />
-        </div>
+  const dynamicBoxShadow = useTransform(
+    containerGlow,
+    (intensity) =>
+      `0 0 ${20 * intensity}px rgba(94, 234, 212, 0.3), 0 0 ${40 * intensity}px rgba(94, 234, 212, 0.1), inset 0 0 ${60 * intensity}px rgba(94, 234, 212, 0.05)`
+  )
 
+  // Instead of an early return, we will conditionalize the content in the main return block
+  // This ensures that all hooks in AnimatedCodeLine and the parent are called consistently
+
+  return (
+    <motion.div
+      ref={containerRef}
+      className={`relative w-full h-[300px] rounded-2xl overflow-hidden ${isMobile ? "mobile-static-view" : ""}`}
+      style={{
+        background: "rgba(255, 255, 255, 0.03)",
+        backdropFilter: "blur(12px)",
+        border: "1px solid rgba(255, 255, 255, 0.1)",
+        boxShadow: isMobile ? "none" : dynamicBoxShadow,
+      }}
+    >
+      <div className="absolute top-0 left-0 right-0 h-10 bg-black/20 backdrop-blur-sm border-b border-white/10 flex items-center gap-2 px-4 z-10">
+        <div className="w-3 h-3 rounded-full bg-[#ff5f56]" />
+        <div className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
+        <div className="w-3 h-3 rounded-full bg-[#27ca40]" />
+      </div>
+
+      <div
+        className={`absolute inset-0 pt-14 px-6 pb-6 overflow-hidden ${isMobile ? "hidden" : "block"}`}
+        onMouseMove={handleMouseMove}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        {codeLines.map((line, index) => (
+          <AnimatedCodeLine
+            key={index}
+            line={line}
+            index={index}
+            scrollProgress={scrollProgressMotion}
+            prefersReducedMotion={prefersReducedMotion}
+            mousePosition={mousePosition}
+            isHovered={isHovered}
+          />
+        ))}
+      </div>
+
+      {isMobile && (
         <div className="absolute inset-0 pt-14 px-6 pb-6">
           {codeLines.slice(0, 8).map((line, index) => {
             const colors = colorMap[line.color]
@@ -289,49 +317,7 @@ export function AnimatedCodeEditor({ scrollProgress: externalScrollProgress }: A
             )
           })}
         </div>
-      </div>
-    )
-  }
-
-  return (
-    <motion.div
-      ref={containerRef}
-      className="relative w-full h-[300px] rounded-2xl overflow-hidden"
-      style={{
-        background: "rgba(255, 255, 255, 0.03)",
-        backdropFilter: "blur(12px)",
-        border: "1px solid rgba(255, 255, 255, 0.1)",
-        boxShadow: useTransform(
-          containerGlow,
-          (intensity) =>
-            `0 0 ${20 * intensity}px rgba(94, 234, 212, 0.3), 0 0 ${40 * intensity}px rgba(94, 234, 212, 0.1), inset 0 0 ${60 * intensity}px rgba(94, 234, 212, 0.05)`
-        ),
-      }}
-    >
-      <div className="absolute top-0 left-0 right-0 h-10 bg-black/20 backdrop-blur-sm border-b border-white/10 flex items-center gap-2 px-4 z-10">
-        <div className="w-3 h-3 rounded-full bg-[#ff5f56]" />
-        <div className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
-        <div className="w-3 h-3 rounded-full bg-[#27ca40]" />
-      </div>
-
-      <div
-        className="absolute inset-0 pt-14 px-6 pb-6 overflow-hidden"
-        onMouseMove={handleMouseMove}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      >
-        {codeLines.map((line, index) => (
-          <AnimatedCodeLine
-            key={index}
-            line={line}
-            index={index}
-            scrollProgress={scrollProgressMotion}
-            prefersReducedMotion={prefersReducedMotion}
-            mousePosition={mousePosition}
-            isHovered={isHovered}
-          />
-        ))}
-      </div>
+      )}
 
       <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent via-transparent to-black/10" />
     </motion.div>

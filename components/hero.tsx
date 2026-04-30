@@ -6,99 +6,128 @@ import Link from "next/link"
 import { ArrowDown, Download, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-const roles = ["Building Scalable Systems as a Developer", "Defining Strategic Vision as a Product Manager"]
-
 export function Hero() {
-  const [currentRole, setCurrentRole] = useState(0)
   const [isAnimating, setIsAnimating] = useState(false)
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setIsAnimating(true)
-      setTimeout(() => {
-        setCurrentRole((prev) => (prev + 1) % roles.length)
-        setIsAnimating(false)
-      }, 500)
-    }, 4000)
-    return () => clearInterval(interval)
+    setIsAnimating(true)
   }, [])
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-6 pt-20 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center px-6 pt-8 md:pt-4 overflow-hidden">
       {/* Background glow effect */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary/5 rounded-full blur-3xl" />
+      <div className="hero-bg" />
+      <div className="hero-grid" />
 
-      <div className="relative z-10 max-w-5xl mx-auto text-center">
-        {/* Profile Image */}
-        <div className="mb-8 animate-fade-in">
-          <div className="relative inline-block">
-            <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden glass-strong p-1 animate-glow">
-              <Image
-                src="/WhatsApp Image 2026-01-08 at 6.07.33 PM.jpeg"
-                alt="Archit Vishnoi"
-                width={160}
-                height={160}
-                className="rounded-full object-cover"
-                priority
-              />
+      <div className="relative z-10 max-w-7xl mx-auto w-full">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+
+          {/* Left Column: Text Content */}
+          <div className="text-left animate-fade-in flex flex-col items-start lg:pl-4">
+            {/* Eyebrow */}
+            <div className="flex items-center gap-4 mb-6">
+              <div className="h-[1px] w-8 bg-primary"></div>
+              <p className="font-mono text-primary text-xs md:text-sm tracking-[0.2em] font-bold uppercase">
+                Product Manager & Builder
+              </p>
             </div>
-            <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-              <span className="text-primary-foreground text-xs font-bold">✓</span>
+
+            {/* Hero Title */}
+            <h1 className="font-serif text-[3.2rem] md:text-[4.5rem] lg:text-[5.5rem] leading-[1.05] tracking-tight text-foreground mb-6 animate-slide-up text-balance">
+              Crafting products <br className="hidden md:block" /> people <em className="italic text-muted-foreground">actually</em> <br className="hidden md:block" /> love to use.
+            </h1>
+
+            {/* Subtext */}
+            <p
+              className="text-base md:text-lg text-muted-foreground/80 max-w-xl mb-10 animate-fade-in font-sans font-light"
+              style={{ animationDelay: "0.3s" }}
+            >
+              Bridging the gap between technical feasibility and user value.
+            </p>
+
+            {/* CTAs */}
+            <div
+              className="flex flex-col sm:flex-row items-center gap-4 animate-fade-in"
+              style={{ animationDelay: "0.5s" }}
+            >
+              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 px-8 rounded-full">
+                <Download className="h-4 w-4" />
+                Download CV
+              </Button>
+              <Link href="#contact">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="glass border-primary/30 text-primary hover:bg-primary/10 gap-2 px-8 bg-transparent rounded-full"
+                >
+                  <Mail className="h-4 w-4" />
+                  Contact Me
+                </Button>
+              </Link>
             </div>
           </div>
-        </div>
 
-        {/* Name */}
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-4 animate-slide-up">
-          <span className="inline-block">Archit</span> <span className="inline-block text-primary">Vishnoi</span>
-        </h1>
+          {/* Right Column: Profile Image Skeleton */}
+          <div className="relative flex justify-center lg:justify-end animate-fade-in mt-16 lg:mt-0 lg:pr-12" style={{ animationDelay: "0.4s" }}>
+            <div className="relative w-[320px] h-[400px] md:w-[380px] md:h-[480px]">
 
-        {/* Role Cycling */}
-        <div className="h-16 md:h-20 flex items-center justify-center mb-6 overflow-hidden">
-          <p
-            className={`text-lg md:text-2xl lg:text-3xl text-muted-foreground transition-all duration-500 ${
-              isAnimating ? "opacity-0 translate-y-4" : "opacity-100 translate-y-0"
-            }`}
-          >
-            {roles[currentRole]}
-          </p>
-        </div>
+              {/* Background Plate */}
+              <div className="absolute inset-x-4 bottom-10 top-2 bg-gradient-to-b from-[#d5dae0] to-[#8d96a0] rounded-t-[3rem] rounded-b-2xl overflow-hidden shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
+                <Image
+                  src="/WhatsApp Image 2026-01-08 at 6.07.33 PM.jpeg"
+                  alt="Archit Vishnoi"
+                  width={400}
+                  height={500}
+                  className="absolute bottom-0 w-full h-auto object-cover object-bottom transition-transform duration-700 hover:scale-105"
+                  priority
+                />
+              </div>
 
-        {/* Subtext */}
-        <p
-          className="text-base md:text-lg text-muted-foreground/80 max-w-2xl mx-auto mb-10 animate-fade-in"
-          style={{ animationDelay: "0.3s" }}
-        >
-          Bridging the gap between technical feasibility and user value.
-        </p>
+              {/* Open to Work Badge */}
+              <div className="absolute -top-6 -right-2 md:-top-4 md:-right-8 z-20 rotate-[12deg] hover:rotate-[15deg] transition-transform duration-300">
+                <div className="bg-[#e4fc68] text-black font-bold uppercase tracking-widest text-[10px] md:text-xs py-2 px-5 rounded-full border border-black/20 shadow-xl flex items-center gap-2">
+                  <span className="text-sm">✺</span> Open to Work <span className="text-sm">✺</span>
+                </div>
+              </div>
 
-        {/* CTAs */}
-        <div
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-in"
-          style={{ animationDelay: "0.5s" }}
-        >
-          <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 px-8">
-            <Download className="h-4 w-4" />
-            Download CV
-          </Button>
-          <Link href="#contact">
-            <Button
-              variant="outline"
-              size="lg"
-              className="glass border-primary/30 text-primary hover:bg-primary/10 gap-2 px-8 bg-transparent"
-            >
-              <Mail className="h-4 w-4" />
-              Contact Me
-            </Button>
-          </Link>
+              {/* Floating Tags Container */}
+              <div className="absolute -bottom-2 -left-4 w-full h-32 z-20 pointer-events-none">
+
+                {/* Team Player Tag */}
+                <div className="absolute bottom-2 left-0 rotate-[4deg] transition-transform duration-500 hover:rotate-0">
+                  <div className="bg-[#1f1f1f] border border-white/5 text-[#e8e4dc] font-serif text-sm md:text-lg px-6 py-2.5 rounded-xl shadow-2xl drop-shadow-2xl opacity-95">
+                    Team player
+                  </div>
+                </div>
+
+                {/* Impact Oriented Tag */}
+                <div className="absolute bottom-8 left-[35%] md:left-[40%] rotate-[22deg] transition-transform duration-500 hover:rotate-[15deg]">
+                  <div className="bg-[#1f1f1f] border border-white/5 text-[#e8e4dc] font-serif text-sm md:text-lg px-6 py-2.5 rounded-xl shadow-2xl drop-shadow-2xl opacity-95">
+                    Impact oriented
+                  </div>
+                </div>
+
+                {/* Creative Tag */}
+                <div className="absolute bottom-24 -right-4 md:-right-8 rotate-[-5deg] transition-transform duration-500 hover:rotate-0">
+                  <div className="bg-[#1f1f1f] border border-white/5 text-[#e8e4dc] font-serif text-sm md:text-lg px-6 py-2.5 rounded-xl shadow-2xl drop-shadow-2xl opacity-95">
+                    Creative
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
         </div>
 
         {/* Scroll Cue */}
-        <Link href="#skills" className="inline-flex flex-col items-center text-primary animate-bounce-subtle">
-          <span className="text-xs text-muted-foreground mb-2">Scroll to explore</span>
-          <ArrowDown className="h-6 w-6" />
-        </Link>
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce-subtle z-20 hidden md:block">
+          <Link href="#skills" className="inline-flex flex-col items-center text-primary">
+            <span className="text-xs text-muted-foreground mb-2">Scroll to explore</span>
+            <ArrowDown className="h-5 w-5" />
+          </Link>
+        </div>
       </div>
     </section>
   )

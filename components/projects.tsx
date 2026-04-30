@@ -8,50 +8,54 @@ import { Button } from "@/components/ui/button"
 
 const caseStudies = [
   {
-    title: "User Engagement Optimization",
-    metric: "+40%",
-    description: "Increased user engagement through data-driven feature prioritization and A/B testing strategies.",
-    tags: ["A/B Testing", "Analytics", "User Research"],
+    title: "WhatsApp Legal Chatbot MVP",
+    metric: "MVP",
+    description:
+      "At Vedant Learning Centre — led the end-to-end product lifecycle, translating user pain points into clear product requirements and shipping a working chatbot prototype.",
+    tags: ["Rapid Prototyping", "Discovery", "Vedant"],
   },
   {
-    title: "Conversion Rate Improvement",
-    metric: "+25%",
-    description: "Improved checkout conversion by streamlining the user flow and reducing friction points.",
-    tags: ["UX Optimization", "Funnel Analysis", "CRO"],
+    title: "Agile Sprint Execution",
+    metric: "AGILE",
+    description:
+      "Broke features into prioritized sprints, refined the backlog from real user feedback, and iterated continuously on chatbot flows and platform usability.",
+    tags: ["Agile", "Backlog Grooming", "Iteration"],
   },
   {
-    title: "Sprint Velocity Enhancement",
-    metric: "2x",
-    description: "Doubled team sprint velocity by implementing Agile best practices and removing blockers.",
-    tags: ["Agile", "Scrum", "Team Leadership"],
+    title: "Founding PM — Project-Z",
+    metric: "0→1",
+    description:
+      "On Olcademy's founding PM team for an early-stage e-commerce platform — driving product development end-to-end from ideation through implementation.",
+    tags: ["0→1", "E-commerce", "Olcademy"],
   },
   {
-    title: "Feature Adoption Rate",
-    metric: "+60%",
-    description: "Boosted feature adoption through targeted onboarding flows and in-app guidance.",
-    tags: ["Product Analytics", "Onboarding", "Growth"],
+    title: "Cross-Functional Coordination",
+    metric: "TEAM",
+    description:
+      "Working synchronously with design, engineering, and QA — collaborating with developers and stakeholders to ship features without sacrificing user experience.",
+    tags: ["Team Management", "Stakeholders", "QA"],
   },
 ]
 
 const developerProjects = [
   {
-    title: "VastraHouse - E-commerce Store",
+    title: "VastraHouse — E-commerce Store",
     description:
-      "Built a scalable and intuitive clothing e-commerce platform solving product browsing, cart management, and secure checkout workflows for online users.",
-    image: "/modern-ecommerce-clothing-store-dark-theme.jpg",
-    tags: ["React.js", "Firebase Auth", "Firestore", "State Management"],
+      "Prototyped a clothing e-commerce platform solving easy catalogue onboarding for small-scale businesses, with N8n automation for E-way bill generation and product listing via images.",
+    image: "/e-commerce-platform-dashboard-dark-theme.jpg",
+    tags: ["React.js", "Firebase Auth", "Firestore", "N8n"],
     period: "Sep 2025 - Oct 2025",
-    githubUrl: "https://github.com/avarchit123",
+    githubUrl: "https://github.com/ArchitVishnoi2003",
     liveUrl: "#",
   },
   {
-    title: "HDIMS - Health Data Management",
+    title: "HDIMS — Health Data Management",
     description:
-      "Developed a Health Data Management mobile app with separate dashboards for Patient and Hospital, enabling users to manage medical history, diet preferences, and health insights.",
-    image: "/health-app-dashboard-medical-dark-theme.jpg",
+      "Conceptualized a Health Data Management mobile app with separate Patient and Hospital dashboards. Used Flutter, Firebase, and Gemini API for AI-personalized diet plans, auth, and real-time data sync.",
+    image: "/modern-analytics-dashboard-dark-theme-data-visuali.jpg",
     tags: ["Flutter", "Firebase", "Gemini API", "AI Diet Plans"],
     period: "Oct 2024 - Nov 2024",
-    githubUrl: "https://github.com/avarchit123",
+    githubUrl: "https://github.com/ArchitVishnoi2003",
     liveUrl: "#",
   },
 ]
@@ -197,7 +201,7 @@ export function Projects() {
 
         {/* View All Link */}
         <div className="text-center mt-12">
-          <Link href="https://github.com/avarchit123" target="_blank" rel="noopener noreferrer">
+          <Link href="https://github.com/ArchitVishnoi2003" target="_blank" rel="noopener noreferrer">
             <Button
               variant="outline"
               className="glass border-primary/30 text-primary hover:bg-primary/10 gap-2 bg-transparent"

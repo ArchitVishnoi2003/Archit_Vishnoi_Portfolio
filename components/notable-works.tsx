@@ -11,9 +11,9 @@ const notableWorks = [
     title: "Patent Published",
     subtitle: "Haptic Feedback Footwear for Terrain Adapted Navigation",
     description:
-      "Developed a wearable navigation system for visually-impaired people - more than just a patent idea. A comprehensive solution combining hardware and software for accessible navigation.",
-    role: "Lead Inventor & Developer",
-    year: "2025",
+      "Wearable navigation system for visually-impaired people — more than just a patent idea. A comprehensive solution combining hardware and software for accessible navigation.",
+    role: "Lead Inventor",
+    year: "Mar 2025 - May 2025",
     tag: "Patent",
   },
   {
@@ -23,38 +23,38 @@ const notableWorks = [
     description:
       "Board Member leading recruitment processes, coordinating departments, delegating responsibilities, and presenting structured reports on club performance and strategic outcomes.",
     role: "Strategic Leadership",
-    year: "2023 - Present",
+    year: "Sep 2024 - Feb 2026",
     tag: "TEDx",
   },
   {
     icon: Users,
     title: "Events Hosted",
-    subtitle: "Successfully Organized Large-Scale Events",
+    subtitle: "Workshops & Seminars at VIT",
     description:
-      "Student Representative and Host for several workshop and seminar events with 100s of attendees. Managed logistics, speaker coordination, and audience engagement.",
+      "Student Representative and Host for several workshop and seminar events. Managed logistics, speaker coordination, and audience engagement.",
     role: "Event Coordinator",
     year: "2023 - Present",
     tag: "Leadership",
   },
   {
     icon: Lightbulb,
-    title: "Research Publication",
-    subtitle: "AI-Powered Accessibility Solutions",
+    title: "Founding PM Team",
+    subtitle: "Project-Z @ Olcademy",
     description:
-      "Published research on leveraging artificial intelligence for creating more inclusive digital experiences and assistive technologies for differently-abled individuals.",
-    role: "Primary Researcher",
-    year: "2024",
-    tag: "Research",
+      "Driving end-to-end product development for an early-stage e-commerce platform. Identifying friction points, optimizing user journey, and conceptualizing new feature flows.",
+    role: "Product Manager Intern",
+    year: "Jan 2026 - Present",
+    tag: "Founding Team",
   },
   {
     icon: Code,
-    title: "Open Source Contributor",
-    subtitle: "Community-Driven Development",
+    title: "Certifications",
+    subtitle: "Android Development & Networking",
     description:
-      "Active contributor to open source projects focused on accessibility tools and developer utilities. Building tools that empower developers and end-users alike.",
-    role: "Core Contributor",
-    year: "2022 - Present",
-    tag: "Open Source",
+      "Android App Development by Imarticus Learning, and Networking Basics certification by CISCO — building foundations in mobile development and computer networks.",
+    role: "Continued Learning",
+    year: "2023 - 2024",
+    tag: "Certifications",
   },
 ]
 

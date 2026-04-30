@@ -5,79 +5,67 @@
 
 /* Custom dark portfolio theme with teal accent */
 :root {
-  --background: oklch(0.13 0.01 260);
-  --foreground: oklch(0.95 0 0);
-  --card: oklch(0.18 0.01 260);
-  --card-foreground: oklch(0.95 0 0);
-  --popover: oklch(0.16 0.01 260);
-  --popover-foreground: oklch(0.95 0 0);
-  --primary: oklch(0.75 0.08 190);
-  --primary-foreground: oklch(0.13 0.01 260);
-  --secondary: oklch(0.22 0.01 260);
-  --secondary-foreground: oklch(0.95 0 0);
-  --muted: oklch(0.25 0.01 260);
-  --muted-foreground: oklch(0.65 0 0);
-  --accent: oklch(0.75 0.08 190);
-  --accent-foreground: oklch(0.13 0.01 260);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.28 0.01 260);
-  --input: oklch(0.22 0.01 260);
-  --ring: oklch(0.75 0.08 190);
-  --chart-1: oklch(0.75 0.08 190);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
+  /* Fonts */
+  --font-sans: var(--sans);
+  --font-serif: var(--serif);
+  --font-mono: var(--mono);
+
+  /* Backgrounds */
+  --background: #080808;
+  --surface: #0f0f0f;
+
+  /* Text */
+  --foreground: #e8e4dc;
+  --muted-foreground: rgba(232, 228, 220, 0.45);
+
+  /* Accent */
+  --primary: #c8f05a;
+  --primary-foreground: #080808;
+  --accent: #c8f05a;
+  --accent-secondary: #f0d35a;
+
+  /* Cards & Popovers */
+  --card: #0f0f0f;
+  --card-foreground: #e8e4dc;
+  --popover: #0f0f0f;
+  --popover-foreground: #e8e4dc;
+
+  /* Borders */
+  --border: rgba(255, 255, 255, 0.07);
+  --input: rgba(255, 255, 255, 0.07);
+  --ring: #c8f05a;
+
+  /* Radius */
   --radius: 0.75rem;
-  --sidebar: oklch(0.16 0.01 260);
-  --sidebar-foreground: oklch(0.95 0 0);
-  --sidebar-primary: oklch(0.75 0.08 190);
-  --sidebar-primary-foreground: oklch(0.13 0.01 260);
-  --sidebar-accent: oklch(0.22 0.01 260);
-  --sidebar-accent-foreground: oklch(0.95 0 0);
-  --sidebar-border: oklch(0.28 0.01 260);
-  --sidebar-ring: oklch(0.75 0.08 190);
+
+  /* Gradients */
+  --hero-glow-green: radial-gradient(ellipse 80% 60% at 60% 30%, rgba(200, 240, 90, 0.06), transparent);
+  --hero-glow-gold: radial-gradient(ellipse 40% 40% at 20% 70%, rgba(240, 211, 90, 0.04), transparent);
+  --gradient-accent: linear-gradient(90deg, #c8f05a, #f0d35a);
 }
 
 .dark {
-  --background: oklch(0.13 0.01 260);
-  --foreground: oklch(0.95 0 0);
-  --card: oklch(0.18 0.01 260);
-  --card-foreground: oklch(0.95 0 0);
-  --popover: oklch(0.16 0.01 260);
-  --popover-foreground: oklch(0.95 0 0);
-  --primary: oklch(0.75 0.08 190);
-  --primary-foreground: oklch(0.13 0.01 260);
-  --secondary: oklch(0.22 0.01 260);
-  --secondary-foreground: oklch(0.95 0 0);
-  --muted: oklch(0.25 0.01 260);
-  --muted-foreground: oklch(0.65 0 0);
-  --accent: oklch(0.75 0.08 190);
-  --accent-foreground: oklch(0.13 0.01 260);
-  --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.28 0.01 260);
-  --input: oklch(0.22 0.01 260);
-  --ring: oklch(0.75 0.08 190);
-  --chart-1: oklch(0.75 0.08 190);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.16 0.01 260);
-  --sidebar-foreground: oklch(0.95 0 0);
-  --sidebar-primary: oklch(0.75 0.08 190);
-  --sidebar-primary-foreground: oklch(0.13 0.01 260);
-  --sidebar-accent: oklch(0.22 0.01 260);
-  --sidebar-accent-foreground: oklch(0.95 0 0);
-  --sidebar-border: oklch(0.28 0.01 260);
-  --sidebar-ring: oklch(0.75 0.08 190);
+  --background: #080808;
+  --surface: #0f0f0f;
+  --foreground: #e8e4dc;
+  --muted-foreground: rgba(232, 228, 220, 0.45);
+  --primary: #c8f05a;
+  --primary-foreground: #080808;
+  --accent: #c8f05a;
+  --accent-secondary: #f0d35a;
+  --card: #0f0f0f;
+  --card-foreground: #e8e4dc;
+  --popover: #0f0f0f;
+  --popover-foreground: #e8e4dc;
+  --border: rgba(255, 255, 255, 0.07);
+  --input: rgba(255, 255, 255, 0.07);
+  --ring: #c8f05a;
 }
 
 @theme inline {
-  --font-sans: "Inter", "Inter Fallback";
-  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
+  --font-mono: var(--font-mono);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -120,27 +108,39 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
-    @apply bg-background text-foreground;
+    overflow-x: clip;
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+  }
+
+  section[id] {
+    scroll-margin-top: 96px;
   }
 }
 
 /* Custom animations and glassmorphism styles */
 @keyframes float {
+
   0%,
   100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-10px);
   }
 }
 
 @keyframes glow {
+
   0%,
   100% {
     box-shadow: 0 0 20px rgba(142, 186, 191, 0.3);
   }
+
   50% {
     box-shadow: 0 0 40px rgba(142, 186, 191, 0.5);
   }
@@ -151,6 +151,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -161,16 +162,19 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
 }
 
 @keyframes bounce-subtle {
+
   0%,
   100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(8px);
   }
@@ -231,6 +235,111 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
+}
+
+/* ── All major headings ── */
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-serif);
+}
+
+/* ── Hero giant title ── */
+.hero-name,
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(3.5rem, 9vw, 9.5rem);
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  /* ← tight tracking = luxury feel */
+}
+
+/* ── Section titles ── */
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  line-height: 1.1;
+}
+
+/* ── Card titles ── */
+.card-title,
+.step-title,
+.skill-name,
+.stat-num {
+  font-family: var(--font-serif);
+}
+
+/* ── Contact/footer big title ── */
+.contact-title {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 8vw, 8rem);
+}
+
+/* ── The KEY italic effect (like "actually") ── */
+.hero-title em,
+.section-title em,
+.contact-title em {
+  font-style: italic;
+  /* triggers DM Serif Display Italic */
+  color: var(--muted-foreground);
+  /* greyed out = dramatic contrast */
+}
+
+/* ── Loader name ── */
+.loader-name {
+  font-family: var(--font-serif);
+}
+
+/* ── 2. Particles canvas (fixed, whole site) ── */
+#particles {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ── 3. Hero glow blobs ── */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 80% 60% at 60% 30%, rgba(200, 240, 90, .06), transparent 60%),
+    radial-gradient(ellipse 40% 40% at 20% 70%, rgba(240, 211, 90, .04), transparent 50%);
+}
+
+/* ── 4. Hero grid ── */
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: .35;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, .03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, .03) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black, transparent);
+  -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black, transparent);
+}
+
+/* ── 5. Base section background ── */
+section {
+  background: transparent;
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* ── 6. Cards/surfaces ── */
+.stat-card,
+.skill-card,
+.work-card,
+.marquee-wrap {
+  background: #0f0f0f;
 }

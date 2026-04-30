@@ -15,52 +15,52 @@ const JourneyScene = dynamic(() => import("./journey-3d-scene").then((mod) => mo
 
 const experiences = [
   {
-    role: "Product Manager",
-    company: "Freelance Projects",
+    role: "Product Manager Intern",
+    company: "Olcademy",
     location: "Remote",
-    period: "2024 - Present",
+    period: "Jan 2026 - Present",
     description:
-      "Created comprehensive product decks and feature proposals for leading fintech and quick-commerce platforms, focusing on user experience enhancement and feature innovation.",
+      "Founding PM team for Project-Z, an e-commerce platform. Driving end-to-end product development from ideation to implementation and iteration.",
     achievements: [
-      "Made decks on Blinkit and Hubble Money App",
-      "Enhanced Blinkit product recommendation feature",
-      "Introduced Hubble Wallet feature concept",
+      "Identifying friction points to optimize user journey",
+      "Conceptualized the new restaurant menu feature",
+      "Working synchronously with design, eng, and QA",
     ],
-    tags: ["Product Strategy", "Fintech", "Quick Commerce"],
+    tags: ["Product Strategy", "E-commerce", "User Research"],
     icon: PieChart,
-    animation: "donut", // 3D donut/pie chart animation
+    animation: "donut",
   },
   {
-    role: "Leadership",
+    role: "General Secretary",
     company: "TEDxVIT Club",
     location: "VIT Chennai",
-    period: "2023 - Present",
+    period: "Sep 2024 - Feb 2026",
     description:
-      "Board Member & General Secretary. Leading recruitment, coordinating departments, and ensuring smooth execution of events with strategic outcomes.",
+      "Board Member leading recruitment, coordinating departments, and ensuring smooth execution of events with strategic outcomes.",
     achievements: [
       "Led interviews & shortlisted candidates",
       "Coordinated cross-department operations",
-      "Presented structured performance reports",
+      "Student rep & host for workshops and seminars",
     ],
     tags: ["Leadership", "Event Management", "Strategy"],
     icon: Users,
-    animation: "network", // Network/connections animation
+    animation: "network",
   },
   {
-    role: "Developer",
+    role: "Product Manager",
     company: "Vedant Learning Centre",
     location: "Remote",
     period: "Jun 2025 - Jul 2025",
     description:
-      "Led the end-to-end development of a WhatsApp-based chatbot MVP, aligning product requirements with rapid prototyping and deployment timelines.",
+      "Led the end-to-end product lifecycle of a WhatsApp-based chatbot connecting lawyers with clients, translating user pain points into clear product requirements.",
     achievements: [
-      "Built admin portal & user-management web interface",
-      "Applied Agile approach with sprints",
-      "Integrated continuous feedback loops",
+      "Conceptualized an AI-powered legal briefing solution",
+      "Designed admin portal & user management interface",
+      "Applied Agile sprints with continuous iteration",
     ],
-    tags: ["React.js", "Firebase", "WhatsApp API", "Agile"],
+    tags: ["Product Lifecycle", "Agile", "Rapid Prototyping"],
     icon: Code,
-    animation: "code", // Code/terminal animation
+    animation: "code",
   },
   {
     role: "Education",
