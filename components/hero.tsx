@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowDown, Download, Mail } from "lucide-react"
+import { ArrowDown, ExternalLink, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export function Hero() {
@@ -50,10 +50,17 @@ export function Hero() {
               className="flex flex-col sm:flex-row items-center gap-4 animate-fade-in"
               style={{ animationDelay: "0.5s" }}
             >
-              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2 px-8 rounded-full">
-                <Download className="h-4 w-4" />
-                Download CV
-              </Button>
+              <Link
+                href="https://drive.google.com/file/d/1AKPjO-2YRQxR-Fu_2mYKQHMI0dCPui4r/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto"
+              >
+                <Button size="lg" className="w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 gap-2 px-8 rounded-full">
+                  <ExternalLink className="h-4 w-4" />
+                  View CV
+                </Button>
+              </Link>
               <Link href="#contact">
                 <Button
                   variant="outline"

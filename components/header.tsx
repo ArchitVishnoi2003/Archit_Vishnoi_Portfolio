@@ -49,7 +49,12 @@ export function Header() {
       )}
     >
       <nav className="flex items-center gap-8">
-        <Link href="/" className="text-lg font-semibold text-foreground hover:text-primary transition-colors">
+        <Link
+          href="/"
+          aria-label="Archit Vishnoi — Home"
+          title="Archit Vishnoi — Product Manager & Developer"
+          className="text-lg font-semibold text-foreground hover:text-primary transition-colors"
+        >
           AV
         </Link>
 
