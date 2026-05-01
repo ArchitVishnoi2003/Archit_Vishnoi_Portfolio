@@ -14,7 +14,7 @@ export function Hero() {
   }, [])
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-5 sm:px-6 pt-28 md:pt-32 lg:pt-24 pb-16 md:pb-12 overflow-hidden w-full max-w-full">
+    <section className="relative min-h-screen flex items-center justify-center px-5 sm:px-6 pt-36 sm:pt-32 md:pt-32 lg:pt-24 pb-16 md:pb-12 overflow-hidden w-full max-w-full">
       {/* Background glow effect */}
       <div className="hero-bg" />
       <div className="hero-grid" />
@@ -76,7 +76,7 @@ export function Hero() {
 
           {/* Right Column: Profile Image */}
           <div className="relative flex justify-center lg:justify-end animate-fade-in mt-2 sm:mt-8 lg:mt-0 lg:pr-12 w-full min-w-0 order-2" style={{ animationDelay: "0.4s" }}>
-            <div className="relative w-[260px] h-[330px] sm:w-[300px] sm:h-[380px] md:w-[340px] md:h-[430px] lg:w-[380px] lg:h-[480px] mx-auto lg:mx-0 max-w-full">
+            <div className="relative w-[300px] h-[380px] sm:w-[340px] sm:h-[430px] md:w-[360px] md:h-[450px] lg:w-[380px] lg:h-[480px] mx-auto lg:mx-0 max-w-full">
 
               {/* Background Plate */}
               <div className="absolute inset-x-4 bottom-10 top-2 bg-gradient-to-b from-[#d5dae0] to-[#8d96a0] rounded-t-[3rem] rounded-b-2xl overflow-hidden shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
