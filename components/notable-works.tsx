@@ -224,7 +224,7 @@ export function NotableWorks() {
     <section id="notable" ref={containerRef} className="relative">
       {/* Desktop: Scroll Stack Animation */}
       {/* Height provides scroll runway for the stacking animation */}
-      <div className="hidden md:block min-h-[300vh] py-24 px-5 sm:px-6 bg-secondary/20">
+      <div className="hidden md:block min-h-[300vh] py-24 px-6 bg-secondary/20">
         <div className="max-w-4xl mx-auto">
           {/* Section Header - sticky at top */}
           <div className="sticky top-8 z-0 text-center mb-8 pb-8">

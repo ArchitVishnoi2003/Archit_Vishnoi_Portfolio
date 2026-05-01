@@ -25,10 +25,10 @@ export function About() {
   }, [])
 
   return (
-    <section id="about" ref={sectionRef} className="py-16 md:py-20 px-5 sm:px-6 md:px-12 lg:px-24 flex items-center min-h-screen">
+    <section id="about" ref={sectionRef} className="py-16 md:py-20 px-5 sm:px-6 md:px-12 lg:px-24 flex items-center min-h-screen w-full max-w-full overflow-hidden">
       <div className="max-w-6xl mx-auto w-full">
         <div
-          className={`grid lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-12 items-center transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          className={`grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-12 items-center transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
         >
           {/* Left Content Side */}

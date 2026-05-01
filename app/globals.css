@@ -117,22 +117,26 @@
   body {
     overflow-x: clip;
     max-width: 100vw;
+    width: 100%;
     background-color: var(--background);
     color: var(--foreground);
     font-family: var(--font-sans);
   }
 
-  /* Defensive: stop images and media from ever pushing the layout wide */
+  /* Defensive: nothing visual ever pushes layout wider than its container */
   img, video, canvas, svg {
     max-width: 100%;
+  }
+
+  section {
+    max-width: 100vw;
+    overflow-x: clip;
   }
 
   section[id] {
     scroll-margin-top: 96px;
   }
 
-  /* Mobile-only: tighten section vertical padding so each section
-     fits in roughly one viewport, like the desktop feel. */
   @media (max-width: 767px) {
     section[id] {
       scroll-margin-top: 80px;

@@ -115,7 +115,7 @@ export function Skills() {
   }, [])
 
   return (
-    <section id="skills" ref={sectionRef} className="py-16 md:py-24 px-5 sm:px-6">
+    <section id="skills" ref={sectionRef} className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-center relative z-50 flex flex-col items-center justify-center">
           <h2 className="text-4xl md:text-6xl font-bold font-serif text-white tracking-wider mt-16 -mb-6">

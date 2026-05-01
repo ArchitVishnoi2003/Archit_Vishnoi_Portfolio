@@ -350,7 +350,7 @@ export function Experience() {
     <section
       id="journey"
       ref={sectionRef}
-      className="relative py-16 md:py-20 px-5 sm:px-6 overflow-hidden"
+      className="relative py-16 md:py-20 px-6 overflow-hidden"
     >
       {/* Section Header */}
       <div className="max-w-6xl mx-auto mb-4 md:mb-6 relative z-10">
