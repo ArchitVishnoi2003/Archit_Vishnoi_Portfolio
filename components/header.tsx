@@ -44,11 +44,13 @@ export function Header() {
   return (
     <header
       className={cn(
-        "fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 max-w-[calc(100vw-2rem)]",
-        isScrolled ? "glass-strong rounded-full px-6 py-3 shadow-lg" : "bg-transparent px-6 py-4",
+        "fixed top-3 md:top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 max-w-[calc(100vw-1.5rem)]",
+        isScrolled
+          ? "glass-strong rounded-full px-4 md:px-6 py-2.5 md:py-3 shadow-lg"
+          : "bg-transparent px-4 md:px-6 py-3 md:py-4",
       )}
     >
-      <nav className="flex items-center gap-8">
+      <nav className="flex items-center gap-4 md:gap-8">
         <Link
           href="/"
           aria-label="Archit Vishnoi — Home"

@@ -84,7 +84,7 @@ export function Projects() {
   }, [])
 
   return (
-    <section id="work" ref={sectionRef} className="py-24 px-6">
+    <section id="work" ref={sectionRef} className="py-16 md:py-24 px-5 sm:px-6">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">

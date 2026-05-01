@@ -165,7 +165,7 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" ref={sectionRef} className="py-24 px-6 bg-secondary/20">
+    <section id="contact" ref={sectionRef} className="py-16 md:py-24 px-5 sm:px-6 bg-secondary/20">
       <div className="max-w-4xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
