@@ -51,7 +51,7 @@ export function Hero() {
               style={{ animationDelay: "0.5s" }}
             >
               <Link
-                href="https://drive.google.com/file/d/1AKPjO-2YRQxR-Fu_2mYKQHMI0dCPui4r/view?usp=sharing"
+                href="https://drive.google.com/file/d/1sRPRSuqdQeaIv9kFIQWVsOURdFtjR_qH/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto"
