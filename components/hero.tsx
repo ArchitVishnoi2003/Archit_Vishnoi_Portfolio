@@ -14,7 +14,7 @@ export function Hero() {
   }, [])
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-5 sm:px-6 pt-36 sm:pt-32 md:pt-32 lg:pt-24 pb-16 md:pb-12 overflow-hidden w-full max-w-full">
+    <section className="relative min-h-[85vh] lg:min-h-screen flex items-center justify-center px-5 sm:px-6 pt-28 sm:pt-24 md:pt-28 lg:pt-24 pb-12 md:pb-12 overflow-hidden w-full max-w-full">
       {/* Background glow effect */}
       <div className="hero-bg" />
       <div className="hero-grid" />
